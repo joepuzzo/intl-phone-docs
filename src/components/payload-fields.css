@@ -1,0 +1,108 @@
+.payload-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.payload-fields__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.payload-fields__row {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.payload-fields__row--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.payload-fields__row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.payload-fields__row--full {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.payload-fields__cell {
+  min-width: 0;
+}
+
+@media (max-width: 520px) {
+  .payload-fields__stack--vcard .payload-fields__row--2,
+  .payload-fields__stack--vcard .payload-fields__row--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Style informed Input / TextArea / Select / Checkbox like link field */
+.payload-fields label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  margin-bottom: 0.35rem;
+}
+
+/* Exclude PhoneInput — it uses its own fused control + .phone-input__control border. */
+.payload-fields input:not([type="checkbox"]):not(.phone-input__field),
+.payload-fields textarea,
+.payload-fields select:not(.phone-input__leading) {
+  font: inherit;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.75rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-heading);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.payload-fields textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.payload-fields select {
+  cursor: pointer;
+}
+
+.payload-fields input:not([type="checkbox"]):not(.phone-input__field):hover,
+.payload-fields textarea:hover,
+.payload-fields select:not(.phone-input__leading):hover {
+  border-color: var(--border-strong);
+}
+
+.payload-fields input:not([type="checkbox"]):not(.phone-input__field):focus,
+.payload-fields textarea:focus,
+.payload-fields select:not(.phone-input__leading):focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.payload-fields input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.payload-fields small[role="alert"] {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--danger);
+}

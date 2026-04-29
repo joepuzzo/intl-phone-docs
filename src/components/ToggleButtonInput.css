@@ -1,0 +1,56 @@
+.toggle-button-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.toggle-button-input__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-heading);
+}
+
+.toggle-button-input__button {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: transparent;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.toggle-button-input__button:hover {
+  border-color: var(--border-strong);
+}
+
+.toggle-button-input__button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.toggle-button-input__button--active {
+  border-color: var(--accent);
+}
+
+.toggle-button-input__button--active::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.toggle-button-input__error {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--danger);
+}
