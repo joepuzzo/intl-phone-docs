@@ -522,6 +522,24 @@ export default function App() {
             Read docs, configure formatting options, and inspect live function
             output.
           </p>
+          <div className="header-links" aria-label="Project links">
+            <a
+              className="header-link"
+              href="https://github.com/joepuzzo/intl-phone"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="header-link"
+              href="https://www.npmjs.com/package/intl-phone"
+              target="_blank"
+              rel="noreferrer"
+            >
+              npm
+            </a>
+          </div>
         </header>
 
         <div className="layout">
