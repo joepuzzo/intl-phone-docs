@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "informed": "^4.66.2",
-    "intl-phone": "^1.2.0",
+    "intl-phone": "^1.1.4",
     "qr-code-styling": "^1.9.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
